@@ -3,46 +3,7 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Belajar Interaktif K3 | First Aid • Risiko • APD</title>
-<style>
-:root{--navy:#10243a;--green:#16865b;--mint:#e9f6ef;--orange:#f2a541;--ink:#243447;--muted:#64748b;--paper:#f5f8fa;--line:#dce5e9;--red:#c74747;--yellow:#e7b83f}
-*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Arial}
-header{background:linear-gradient(120deg,#10243a,#174d50);color:white;padding:34px max(22px,calc((100% - 1180px)/2)) 28px}
-header .eyebrow{color:#b7e6d0;text-transform:uppercase;letter-spacing:.14em;font-size:.76rem;font-weight:800}
-h1{font-size:clamp(2rem,4vw,3.1rem);line-height:1.12;margin:10px 0}
-header p{max-width:760px;color:#dbe9ed;margin:0}
-.wrap{max-width:1180px;margin:auto;padding:22px}
-nav{display:flex;gap:8px;flex-wrap:wrap;margin:0 auto 18px;max-width:1180px;padding:0 22px}
-nav button,.btn{border:0;border-radius:12px;padding:10px 15px;background:white;color:var(--navy);font-weight:750;cursor:pointer;box-shadow:0 1px 5px #18344a12}
-nav button.active,.btn.primary{background:var(--green);color:white}
-button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid #f2a541;outline-offset:2px}
-.panel{display:none}.panel.active{display:block}
-.hero{display:grid;grid-template-columns:1.35fr .65fr;gap:16px;margin-bottom:18px}
-.card{background:white;border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:0 5px 20px #17354a08}
-.card h2,.card h3{color:var(--navy);margin:0 0 10px;line-height:1.25}
-.card p:last-child{margin-bottom:0}
-.tag{display:inline-block;background:var(--mint);color:#126344;padding:4px 9px;border-radius:99px;font-size:.78rem;font-weight:800}
-.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
-.kpi{font-size:1.8rem;font-weight:850;color:var(--green);line-height:1.2}
-.small{font-size:.9rem;color:var(--muted)}
-.callout{border-left:4px solid var(--orange);background:#fff8eb;padding:12px 15px;border-radius:8px;margin:14px 0}
-.danger{border-left-color:var(--red);background:#fff1f1}
-ul{padding-left:21px}li{margin:5px 0}
-.step{display:flex;gap:12px;align-items:flex-start;margin:12px 0}
-.num{flex:0 0 32px;height:32px;border-radius:50%;background:var(--green);color:white;display:grid;place-items:center;font-weight:850}
-.pill{padding:5px 10px;border-radius:8px;background:#edf2f5;font-size:.82rem;font-weight:700}
-select,input{padding:10px 12px;border:1px solid #cbd5df;border-radius:10px;background:white;color:var(--ink);font:inherit;max-width:100%}
-label{font-weight:700;display:block;margin:8px 0 5px}
-.result{margin-top:12px;padding:14px;border-radius:12px;background:#eef7f2;border:1px solid #cce6d7}
-.result.high{background:#fff0ed;border-color:#f0c4bc}.result.medium{background:#fff8e7;border-color:#f0dfaa}
-table{border-collapse:collapse;width:100%;font-size:.9rem}th,td{padding:9px;border:1px solid var(--line);text-align:left;vertical-align:top}th{background:#edf3f4;color:var(--navy)}
-.quiz-q{padding:14px 0;border-bottom:1px solid var(--line)}.quiz-q p{font-weight:750;margin:0 0 8px}
-.option{display:block;margin:7px 0;font-weight:500}.option input{margin-right:8px}
-.feedback{font-weight:750;margin-top:6px}
-.progress{height:8px;background:#e5ecef;border-radius:20px;overflow:hidden;margin:12px 0}.progress span{display:block;height:100%;background:var(--green);width:0}
-footer{padding:26px 22px;color:var(--muted);text-align:center;font-size:.85rem}
-@media(max-width:760px){.hero,.grid,.grid3{grid-template-columns:1fr}header{padding-top:26px}.wrap{padding:14px}nav{padding:0 14px}.card{padding:16px}}
-</style>
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <header>
@@ -151,43 +112,5 @@ footer{padding:26px 22px;color:var(--muted);text-align:center;font-size:.85rem}
 </section>
 </main>
 <footer>Materi pembelajaran berdasarkan PDF: Dasar-Dasar K3, Manajemen Risiko, Manajemen APD, dan Basic First Aid. Gunakan SOP dan ketentuan resmi yang berlaku di tempat kerja.</footer>
-<script>
-const tabs=[...document.querySelectorAll('nav button')];
-function go(id){document.querySelectorAll('.panel').forEach(p=>p.classList.toggle('active',p.id===id));tabs.forEach(b=>b.classList.toggle('active',b.dataset.tab===id));window.scrollTo({top:0,behavior:'smooth'})}
-tabs.forEach(b=>b.addEventListener('click',()=>go(b.dataset.tab)));
-document.getElementById('like').addEventListener('change',riskCalc);document.getElementById('sev').addEventListener('change',riskCalc);
-function riskCalc(){let a=+like.value,b=+sev.value,s=a*b;let cat=s<=4?'Rendah':s<=9?'Sedang':s<=16?'Tinggi':'Ekstrim';let note={Rendah:'Perlu aturan, prosedur, atau rambu sesuai matriks materi.',Sedang:'Perlu tindakan pengendalian langsung sesuai kondisi bahaya.',Tinggi:'Perlu perencanaan pengendalian dan prioritas penanganan.',Ekstrim:'Perlu perhatian manajemen atas dan tindakan segera sesuai prosedur.'}[cat];riskResult.className='result '+(cat==='Ekstrim'||cat==='Tinggi'?'high':cat==='Sedang'?'medium':'');riskResult.innerHTML='<b>Skor: '+s+' · '+cat+'</b><br>'+note}
-const apdMap={
-mata:['Pelindung mata dan wajah','Kacamata pengaman, goggles, face shield, atau helm las sesuai jenis paparan. Face shield tidak dianggap pengganti kacamata/goggles.'],
-napas:['Pelindung pernapasan','Respirator yang sesuai dengan jenis kontaminan dan hasil penilaian bahaya. Jenis respirator harus dipilih, diuji kesesuaiannya, dan digunakan sesuai program/prosedur tempat kerja.'],
-kepala:['Pelindung kepala','Helm keselamatan yang sesuai dengan risiko benturan atau benda jatuh; periksa kondisi dan kelayakannya.'],
-tangan:['Pelindung tangan dan kulit','Sarung tangan yang kompatibel dengan bahan dan pekerjaan. Jenis bahan sarung tangan harus disesuaikan dengan bahaya yang dihadapi.'],
-kaki:['Pelindung kaki','Sepatu keselamatan yang sesuai dengan risiko benda jatuh, tusukan, atau kondisi lantai.'],
-bising:['Pelindung pendengaran','Ear plug atau ear muff dengan tingkat perlindungan yang sesuai dengan paparan kebisingan.'],
-jatuh:['Perlindungan jatuh dari ketinggian','Sistem perlindungan jatuh yang sesuai, seperti full body harness dan sistem pengaman terkait, dengan pemeriksaan serta pelatihan.']
-};
-hazard.addEventListener('change',()=>{let v=apdMap[hazard.value];apdResult.innerHTML='<b>'+v[0]+'</b><br>'+v[1]});
-const aidMap={
-danger:'Jangan mendekat sebelum bahaya dikendalikan. Amankan area dari jarak aman dan panggil petugas/tim tanggap darurat.',
-unresponsive:'Segera hubungi layanan darurat. Periksa respons dan pernapasan sesuai pelatihan, ikuti instruksi operator. Jangan memberi makan atau minum.',
-bleed:'Gunakan sarung tangan/barrier bila tersedia, minta bantuan medis, dan ikuti pelatihan pertolongan perdarahan. Perdarahan berat memerlukan bantuan darurat segera.',
-burn:'Jauhkan korban dari sumber panas jika aman, minta bantuan medis sesuai luas/lokasi/tingkat luka. Jangan mengoleskan bahan sembarangan atau memecahkan lepuh.',
-fracture:'Jangan meluruskan atau memindahkan bagian yang cedera. Batasi gerakan, pantau kondisi korban, dan minta bantuan medis.',
-conscious:'Tanyakan keluhan, tetap dampingi, amati perubahan kondisi, dan cari bantuan medis bila gejala memburuk atau ada keraguan.'
-};
-victim.addEventListener('change',()=>{aidResult.textContent=aidMap[victim.value]});
-const questions=[
-['Apa tujuan utama K3?',['Hanya memenuhi administrasi','Melindungi pekerja dan orang lain serta menjaga sumber produksi aman','Mempercepat pekerjaan dengan mengabaikan prosedur'],1,'Dasar K3: tujuan K3.'],
-['Insiden yang tidak menimbulkan cedera tetapi berpotensi menimbulkan kerugian disebut…',['Hampir celaka','Kecelakaan fatal','Penyakit akibat kerja'],0,'Dasar K3: insiden dan hampir celaka.'],
-['Risiko dalam materi dinilai dengan mempertimbangkan…',['Warna seragam dan masa kerja','Kemungkinan dan keparahan','Jumlah alat tulis'],1,'Manajemen Risiko: kemungkinan × keparahan.'],
-['Urutan hirarki pengendalian yang paling tepat dimulai dari…',['APD','Rambu peringatan','Eliminasi bahaya'],2,'Manajemen Risiko: eliminasi berada di tingkat paling efektif.'],
-['APD sebaiknya dipahami sebagai…',['Pengganti seluruh pengendalian lain','Lapisan perlindungan terakhir','Jaminan bahwa bahaya hilang'],1,'Manajemen APD: APD bukan pengganti kontrol lain.'],
-['Sebelum menolong korban, penolong perlu menerapkan…',['3S: Safety Self, Scene, Patient','Langsung memindahkan korban','Memberi minum kepada semua korban'],0,'BFA: prinsip 3S.'],
-['Apa yang dilakukan jika lokasi kejadian masih berbahaya?',['Segera masuk dan menolong','Menunggu tanpa memberi tahu siapa pun','Jangan mendekat; amankan area dan panggil bantuan'],2,'BFA: keselamatan penolong dan lokasi.'],
-['Mengapa APD harus sesuai dengan bahaya?',['Agar terlihat seragam','Karena APD yang tidak sesuai tidak memberi perlindungan yang diperlukan','Supaya semua pekerjaan memakai jenis APD sama'],1,'Manajemen APD: pemilihan sesuai potensi bahaya.']
-];
-function renderQuiz(){quizArea.innerHTML=questions.map((q,i)=>'<div class="quiz-q"><p>'+(i+1)+'. '+q[0]+'</p>'+q[1].map((o,j)=>'<label class="option"><input type="radio" name="q'+i+'" value="'+j+'">'+o+'</label>').join('')+'<div class="feedback" id="fb'+i+'"></div></div>').join('');quizScore.innerHTML='';quizProgress.style.width='0%'}
-checkQuiz.addEventListener('click',()=>{let score=0,answered=0;questions.forEach((q,i)=>{let el=document.querySelector('input[name="q'+i+'"]:checked'),fb=document.getElementById('fb'+i);if(el){answered++;if(+el.value===q[2]){score++;fb.textContent='Benar. '+q[3];fb.style.color='#16865b'}else{fb.textContent='Belum tepat. '+q[3];fb.style.color='#bd4b42'}}else{fb.textContent='Belum dijawab. '+q[3];fb.style.color='#9a6b1b'}});quizProgress.style.width=(answered/questions.length*100)+'%';quizScore.innerHTML='<div class="result"><b>Skor: '+score+' dari '+questions.length+'</b><br>'+ (score===questions.length?'Hebat! Semua jawaban benar.':'Pelajari kembali penjelasan pada bagian yang belum tepat, lalu coba lagi.')+'</div>'});
-resetQuiz.addEventListener('click',renderQuiz);renderQuiz();riskCalc();
-</script>
+<script src="js/app.js"></script>
 </body></html>
