@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Belajar Interaktif K3 | First Aid • Risiko • APD</title>
+<style>
+:root{--navy:#10243a;--green:#16865b;--mint:#e9f6ef;--orange:#f2a541;--ink:#243447;--muted:#64748b;--paper:#f5f8fa;--line:#dce5e9;--red:#c74747;--yellow:#e7b83f}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Arial}
+header{background:linear-gradient(120deg,#10243a,#174d50);color:white;padding:34px max(22px,calc((100% - 1180px)/2)) 28px}
+header .eyebrow{color:#b7e6d0;text-transform:uppercase;letter-spacing:.14em;font-size:.76rem;font-weight:800}
+h1{font-size:clamp(2rem,4vw,3.1rem);line-height:1.12;margin:10px 0}
+header p{max-width:760px;color:#dbe9ed;margin:0}
+.wrap{max-width:1180px;margin:auto;padding:22px}
+nav{display:flex;gap:8px;flex-wrap:wrap;margin:0 auto 18px;max-width:1180px;padding:0 22px}
+nav button,.btn{border:0;border-radius:12px;padding:10px 15px;background:white;color:var(--navy);font-weight:750;cursor:pointer;box-shadow:0 1px 5px #18344a12}
+nav button.active,.btn.primary{background:var(--green);color:white}
+button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid #f2a541;outline-offset:2px}
+.panel{display:none}.panel.active{display:block}
+.hero{display:grid;grid-template-columns:1.35fr .65fr;gap:16px;margin-bottom:18px}
+.card{background:white;border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:0 5px 20px #17354a08}
+.card h2,.card h3{color:var(--navy);margin:0 0 10px;line-height:1.25}
+.card p:last-child{margin-bottom:0}
+.tag{display:inline-block;background:var(--mint);color:#126344;padding:4px 9px;border-radius:99px;font-size:.78rem;font-weight:800}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.kpi{font-size:1.8rem;font-weight:850;color:var(--green);line-height:1.2}
+.small{font-size:.9rem;color:var(--muted)}
+.callout{border-left:4px solid var(--orange);background:#fff8eb;padding:12px 15px;border-radius:8px;margin:14px 0}
+.danger{border-left-color:var(--red);background:#fff1f1}
+ul{padding-left:21px}li{margin:5px 0}
+.step{display:flex;gap:12px;align-items:flex-start;margin:12px 0}
+.num{flex:0 0 32px;height:32px;border-radius:50%;background:var(--green);color:white;display:grid;place-items:center;font-weight:850}
+.pill{padding:5px 10px;border-radius:8px;background:#edf2f5;font-size:.82rem;font-weight:700}
+select,input{padding:10px 12px;border:1px solid #cbd5df;border-radius:10px;background:white;color:var(--ink);font:inherit;max-width:100%}
+label{font-weight:700;display:block;margin:8px 0 5px}
+.result{margin-top:12px;padding:14px;border-radius:12px;background:#eef7f2;border:1px solid #cce6d7}
+.result.high{background:#fff0ed;border-color:#f0c4bc}.result.medium{background:#fff8e7;border-color:#f0dfaa}
+table{border-collapse:collapse;width:100%;font-size:.9rem}th,td{padding:9px;border:1px solid var(--line);text-align:left;vertical-align:top}th{background:#edf3f4;color:var(--navy)}
+.quiz-q{padding:14px 0;border-bottom:1px solid var(--line)}.quiz-q p{font-weight:750;margin:0 0 8px}
+.option{display:block;margin:7px 0;font-weight:500}.option input{margin-right:8px}
+.feedback{font-weight:750;margin-top:6px}
+.progress{height:8px;background:#e5ecef;border-radius:20px;overflow:hidden;margin:12px 0}.progress span{display:block;height:100%;background:var(--green);width:0}
+footer{padding:26px 22px;color:var(--muted);text-align:center;font-size:.85rem}
+@media(max-width:760px){.hero,.grid,.grid3{grid-template-columns:1fr}header{padding-top:26px}.wrap{padding:14px}nav{padding:0 14px}.card{padding:16px}}
+</style>
+</head>
+<body>
+<header>
+ <div class="eyebrow">Modul belajar mandiri • Keselamatan kerja</div>
+ <h1>Kenali Bahaya.<br>Kurangi Risiko. Lindungi Diri.</h1>
+ <p>Media belajar interaktif untuk memahami Dasar-Dasar K3, Manajemen Risiko, Manajemen APD, dan Basic First Aid (BFA). Pelajari konsep, coba simulasi, lalu uji pemahaman.</p>
+</header>
+<nav aria-label="Navigasi materi">
+ <button class="active" data-tab="beranda">Beranda</button>
+ <button data-tab="k3">Dasar K3</button>
+ <button data-tab="risiko">Manajemen Risiko</button>
+ <button data-tab="apd">Manajemen APD</button>
+ <button data-tab="firstaid">Basic First Aid</button>
+ <button data-tab="kuis">Kuis</button>
+</nav>
+<main class="wrap">
+<section id="beranda" class="panel active">
+ <div class="hero">
+  <div class="card"><span class="tag">Mulai dari sini</span><h2>Empat materi, satu tujuan: bekerja lebih aman</h2>
+  <p>K3 bukan sekadar memakai helm atau memasang rambu. K3 dimulai dari mengenali bahaya, menilai risiko, menentukan pengendalian yang tepat, menggunakan APD sesuai pekerjaan, dan mengetahui cara meminta bantuan saat terjadi keadaan darurat.</p>
+  <div class="callout">Gunakan menu di atas untuk membuka materi. Setiap bagian memiliki contoh sederhana dan aktivitas yang dapat dicoba.</div></div>
+  <div class="card"><div class="kpi">4</div><b>Topik utama</b><p class="small">Dasar K3 • Risiko • APD • P3K</p><div class="kpi">1</div><b>Simulasi penilaian risiko</b><p class="small">Coba ubah kemungkinan dan keparahan.</p></div>
+ </div>
+ <div class="grid">
+  <div class="card"><h3>01 · Dasar K3</h3><p>Memahami tujuan K3, insiden, kecelakaan kerja, hampir celaka, dan sumber bahaya.</p><button class="btn primary" onclick="go('k3')">Pelajari K3 →</button></div>
+  <div class="card"><h3>02 · Manajemen Risiko</h3><p>Belajar mengenali bahaya, memperkirakan kemungkinan dan keparahan, lalu memilih pengendalian.</p><button class="btn primary" onclick="go('risiko')">Coba simulasi →</button></div>
+  <div class="card"><h3>03 · Manajemen APD</h3><p>Memilih pelindung kepala, mata, pernapasan, tangan, kaki, pendengaran, dan perlindungan jatuh.</p><button class="btn primary" onclick="go('apd')">Kenali APD →</button></div>
+  <div class="card"><h3>04 · Basic First Aid</h3><p>Memahami keselamatan penolong, penilaian awal, dan respons awal sambil meminta bantuan medis.</p><button class="btn primary" onclick="go('firstaid')">Pelajari P3K →</button></div>
+ </div>
+ <p class="small">Materi disusun berdasarkan empat PDF yang diberikan. Penjelasan disederhanakan untuk pembelajaran; bukan pengganti pelatihan, SOP tempat kerja, atau arahan tenaga medis.</p>
+</section>
+
+<section id="k3" class="panel">
+ <div class="card"><span class="tag">Materi 01</span><h2>Dasar-Dasar Keselamatan dan Kesehatan Kerja (K3)</h2><p><b>Pengertian sederhana:</b> K3 adalah upaya untuk melindungi pekerja dan orang lain di tempat kerja, sekaligus memastikan sumber produksi dapat digunakan secara aman dan efisien.</p><p class="small">Rujukan: PDF Dasar-Dasar K3, hlm. 3–5.</p></div>
+ <div class="grid" style="margin-top:14px">
+  <div class="card"><h3>Tujuan K3</h3><ol><li>Melindungi dan menjamin keselamatan tenaga kerja serta orang lain di tempat kerja.</li><li>Menjamin sumber produksi digunakan secara aman dan efisien.</li><li>Meningkatkan kesejahteraan dan produktivitas.</li></ol></div>
+  <div class="card"><h3>Simbol K3</h3><p>Dalam materi, lambang K3 terdiri dari palang hijau, roda gigi bergerigi sebelas, dan dasar putih.</p><ul><li><b>Palang:</b> bebas dari kecelakaan dan penyakit akibat kerja.</li><li><b>Roda gigi:</b> bekerja dengan kesegaran jasmani dan rohani.</li><li><b>Hijau:</b> selamat, sehat, sejahtera.</li><li><b>Putih:</b> bersih dan suci.</li><li><b>11 gerigi:</b> sebelas bab UU No. 1 Tahun 1970.</li></ul><p class="small">Rujukan: PDF Dasar-Dasar K3, hlm. 3.</p></div>
+ </div>
+ <div class="card" style="margin-top:14px"><h3>Bedakan tiga istilah ini</h3><div class="grid3">
+  <div><span class="pill">Insiden</span><p>Kejadian terkait pekerjaan yang dapat menyebabkan cedera, PAK, atau kematian; termasuk keadaan darurat.</p></div>
+  <div><span class="pill">Kecelakaan kerja</span><p>Insiden yang benar-benar menyebabkan cedera, PAK, atau kefatalan.</p></div>
+  <div><span class="pill">Hampir celaka</span><p>Insiden yang tidak menyebabkan cedera atau kerugian, tetapi berpotensi menyebabkannya.</p></div>
+ </div><p class="small">Rujukan: PDF Dasar-Dasar K3, hlm. 6 dan 12–13.</p></div>
+ <div class="card" style="margin-top:14px"><h3>Jenis bahaya di tempat kerja</h3><div class="grid">
+  <div><b>Biologi</b><p>Bakteri, virus, jamur, tanaman, dan binatang.</p></div><div><b>Kimia</b><p>Bahan, cairan, gas, uap, atau debu berbahaya; dapat bersifat beracun, reaktif, mudah terbakar, iritan, atau korosif.</p></div>
+  <div><b>Fisik/mekanik</b><p>Ketinggian, mesin, kendaraan, ruang terbatas, listrik, kebisingan, suhu, cahaya, getaran, dan radiasi.</p></div><div><b>Biomekanik</b><p>Gerakan berulang, postur kerja, pengangkutan manual, serta desain alat atau tempat kerja.</p></div>
+  <div><b>Psikologi/sosial</b><p>Stres, kekerasan, pelecehan, pengucilan, dan emosi negatif.</p></div><div><b>Sumber bahaya</b><p>Manusia, mesin, material, metode, dan lingkungan. Bentuknya dapat berupa tindakan tidak aman atau kondisi tidak aman.</p></div>
+ </div><p class="small">Rujukan: PDF Dasar-Dasar K3, hlm. 11.</p></div>
+ <div class="callout"><b>Contoh:</b> Kabel melintang di jalur pejalan kaki adalah kondisi tidak aman. Jika seseorang tersandung tetapi tidak cedera, kejadian itu dapat dilaporkan sebagai hampir celaka. Jangan menunggu sampai ada korban untuk memperbaiki kondisi tersebut.</div>
+</section>
+
+<section id="risiko" class="panel">
+ <div class="card"><span class="tag">Materi 02</span><h2>Manajemen Risiko K3</h2><p>Manajemen risiko adalah aktivitas terkoordinasi untuk mengarahkan dan mengendalikan organisasi terkait risiko. Tujuannya mengenali ancaman, menilai tingkat risikonya, mengendalikan, dan menyiapkan sumber daya yang diperlukan.</p><p class="small">Rujukan: PDF Manajemen Risiko, hlm. 2 dan 5.</p></div>
+ <div class="grid" style="margin-top:14px">
+  <div class="card"><h3>Empat tahap pengelolaan</h3>
+   <div class="step"><span class="num">1</span><div><b>Identifikasi risiko</b><br>Kenali bahaya yang mengancam pekerja, aset, atau kegiatan.</div></div>
+   <div class="step"><span class="num">2</span><div><b>Pengukuran risiko</b><br>Nilai kemungkinan kejadian dan tingkat keparahannya.</div></div>
+   <div class="step"><span class="num">3</span><div><b>Pengendalian risiko</b><br>Tentukan tindakan untuk menghilangkan atau mengurangi risiko.</div></div>
+   <div class="step"><span class="num">4</span><div><b>Pembiayaan risiko</b><br>Perkirakan biaya dan pastikan sumber daya tersedia.</div></div>
+  </div>
+  <div class="card"><h3>Tiga langkah penilaian risiko</h3><ol><li>Perhatikan dan identifikasi bahayanya.</li><li>Nilai risikonya: seberapa mungkin dan seberapa parah dampaknya?</li><li>Tentukan pengendalian dan terapkan.</li></ol><p>Libatkan pekerja dan perwakilan keselamatan, lalu catat hasil penilaian.</p><p class="small">Rujukan: PDF Manajemen Risiko, hlm. 8–11.</p></div>
+ </div>
+ <div class="card" style="margin-top:14px"><h3>Simulasi sederhana: hitung skor risiko</h3><p>Materi menggunakan perkalian <b>kemungkinan × keparahan</b>. Pilih angka 1–5 untuk melihat skor ilustratif. Skor ini mengikuti matriks angka pada materi, bukan penilaian resmi untuk semua tempat kerja.</p>
+ <div class="grid">
+  <div><label for="like">Kemungkinan (1–5)</label><select id="like"><option value="1">1 · Sangat jarang (1–20%)</option><option value="2">2 · Jarang (21–40%)</option><option value="3" selected>3 · Sedang (41–60%)</option><option value="4">4 · Sering (61–80%)</option><option value="5">5 · Sangat sering (81–99%)</option></select></div>
+  <div><label for="sev">Keparahan (1–5)</label><select id="sev"><option value="1">1 · Tidak ada dampak</option><option value="2">2 · Ringan (P3K)</option><option value="3" selected>3 · Sedang</option><option value="4">4 · Berat</option><option value="5">5 · Sangat berat/fatal</option></select></div>
+ </div>
+ <div id="riskResult" class="result" aria-live="polite"><b>Skor: 9</b><br>Kategori pada matriks: Sedang. Perlu tindakan pengendalian sesuai kondisi bahaya.</div>
+ <p class="small">Rujukan: PDF Manajemen Risiko, hlm. 17–20. Kategori matriks dapat berbeda antarorganisasi; ikuti standar dan prosedur tempat kerja.</p></div>
+ <div class="card" style="margin-top:14px"><h3>Hirarki pengendalian bahaya</h3><p>Urutkan pilihan dari yang paling efektif. APD berada pada tingkat terakhir, bukan satu-satunya pengendalian.</p>
+ <div class="grid3"><div class="card"><b>1. Eliminasi</b><p>Hilangkan sumber bahaya.</p></div><div class="card"><b>2. Substitusi</b><p>Ganti bahan, alat, atau proses dengan yang lebih aman.</p></div><div class="card"><b>3. Rekayasa teknis</b><p>Pisahkan pekerja dari bahaya atau pasang pelindung mesin/ventilasi.</p></div><div class="card"><b>4. Administratif</b><p>SOP, rambu, pelatihan, pengaturan waktu atau sistem kerja.</p></div><div class="card"><b>5. APD</b><p>Perlindungan terakhir untuk mengurangi paparan pekerja.</p></div></div>
+ <p class="small">Rujukan: PDF Manajemen Risiko, hlm. 32–42.</p></div>
+</section>
+
+<section id="apd" class="panel">
+ <div class="card"><span class="tag">Materi 03</span><h2>Manajemen Alat Pelindung Diri (APD)</h2><p>APD adalah alat yang berfungsi mengisolasi sebagian atau seluruh tubuh dari potensi bahaya di tempat kerja. APD menjadi penghalang antara pekerja dan bahaya, tetapi tidak menghilangkan bahaya itu sendiri.</p><p class="small">Rujukan: PDF Manajemen APD, hlm. 3–4.</p><div class="callout">Ingat: APD bukan pengganti pengendalian teknis, praktik kerja aman, atau pengendalian administratif. APD adalah lapisan perlindungan terakhir.</div></div>
+ <div class="card" style="margin-top:14px"><h3>Pilih bahaya, lihat jenis APD yang relevan</h3><label for="hazard">Bahaya atau paparan</label><select id="hazard"><option value="mata">Partikel terbang, percikan, atau radiasi cahaya</option><option value="napas">Debu, asap, gas, uap, atau kabut berbahaya</option><option value="kepala">Benda jatuh atau benturan pada kepala</option><option value="tangan">Bahan kimia atau risiko pada tangan/kulit</option><option value="kaki">Benda jatuh, tertusuk, atau permukaan berisiko pada kaki</option><option value="bising">Paparan kebisingan berlebih</option><option value="jatuh">Risiko jatuh saat bekerja di ketinggian</option></select>
+ <div id="apdResult" class="result" aria-live="polite"><b>Pelindung mata dan wajah</b><br>Kacamata pengaman, goggles, face shield, atau helm las sesuai jenis paparan. Face shield tidak menggantikan kacamata pelindung.</div></div>
+ <div class="grid" style="margin-top:14px">
+  <div class="card"><h3>7 kelompok pelindung</h3><ol><li>Mata dan wajah</li><li>Pernapasan</li><li>Kepala</li><li>Kaki</li><li>Tangan dan kulit</li><li>Pendengaran</li><li>Perlindungan jatuh dari ketinggian</li></ol><p class="small">Rujukan: PDF Manajemen APD, hlm. 8.</p></div>
+  <div class="card"><h3>Tanggung jawab</h3><b>Perusahaan</b><p>Mengidentifikasi kebutuhan, menyediakan APD yang sesuai, melatih pekerja, mengatur penyimpanan dan distribusi, serta menyediakan tempat pemusnahan APD rusak/kedaluwarsa.</p><b>Pekerja</b><p>Mengikuti pengendalian risiko dan menggunakan APD yang sesuai dengan pekerjaan.</p><p class="small">Rujukan: PDF Manajemen APD, hlm. 4 dan 7.</p></div>
+ </div>
+ <div class="card" style="margin-top:14px"><h3>Siklus pengelolaan APD</h3><div class="grid3"><div><span class="num">1</span><b>Rencanakan</b><p>Dasarkan kebutuhan APD pada identifikasi bahaya.</p></div><div><span class="num">2</span><b>Daftarkan</b><p>Buat daftar dan jadwal APD yang diperlukan.</p></div><div><span class="num">3</span><b>Latih</b><p>Ajarkan penggunaan, perawatan, dan penyimpanan.</p></div><div><span class="num">4</span><b>Informasikan</b><p>Jelaskan potensi bahaya di tempat kerja.</p></div><div><span class="num">5</span><b>Distribusikan</b><p>Catat penerima dan jenis pekerjaan.</p></div><div><span class="num">6</span><b>Rawat/ganti</b><p>Simpan dengan benar dan musnahkan APD rusak/kedaluwarsa.</p></div></div><p class="small">Rujukan: PDF Manajemen APD, hlm. 7 dan 13.</p></div>
+</section>
+
+<section id="firstaid" class="panel">
+ <div class="card"><span class="tag">Materi 04</span><h2>Basic First Aid (BFA) / Pertolongan Pertama</h2><p>Pertolongan pertama adalah perawatan awal bagi orang yang mengalami cedera atau sakit mendadak, sejak kejadian sampai bantuan medis datang. Penolong harus mengutamakan keselamatan diri, lokasi, dan korban.</p><p class="small">Rujukan: PDF BFA, hlm. 22–24 dan 28–29.</p></div>
+ <div class="callout danger"><b>Penting:</b> Materi ini untuk pengenalan. Dalam keadaan darurat, segera hubungi layanan darurat/tenaga medis setempat dan ikuti instruksi petugas. Jangan melakukan tindakan yang belum pernah dilatihkan. Panduan pertolongan pertama dapat berubah; ikuti pelatihan dan protokol terbaru yang berlaku.</div>
+ <div class="card"><h3>Prinsip 3S sebelum menolong</h3><div class="grid3"><div><div class="kpi">1</div><b>Safety Self</b><p>Pastikan diri aman dan gunakan APD yang sesuai, misalnya sarung tangan medis.</p></div><div><div class="kpi">2</div><b>Safety Scene</b><p>Pastikan lokasi aman. Waspadai lalu lintas, kabel listrik, kebocoran gas, dan bahaya lain.</p></div><div><div class="kpi">3</div><b>Safety Patient</b><p>Setelah lokasi aman, bantu korban tanpa menambah risiko atau memindahkan korban tanpa alasan.</p></div></div><p class="small">Rujukan: PDF BFA, hlm. 8–9 dan 28.</p></div>
+ <div class="card" style="margin-top:14px"><h3>Penilaian awal: DR-CAB</h3><p>Materi BFA menggunakan urutan Danger, Response, Chest Compression, Airway, dan Breathing.</p>
+ <div class="step"><span class="num">D</span><div><b>Danger — Bahaya</b><br>Periksa apakah lokasi aman bagi penolong, korban, dan orang sekitar.</div></div>
+ <div class="step"><span class="num">R</span><div><b>Response — Respons</b><br>Periksa respons korban dan segera minta bantuan jika tidak merespons.</div></div>
+ <div class="step"><span class="num">C</span><div><b>Chest Compression — Kompresi dada</b><br>Jika korban tidak responsif dan tidak bernapas normal, hubungi layanan darurat dan ikuti instruksi operator. RJP dilakukan oleh orang yang terlatih atau sesuai arahan petugas.</div></div>
+ <div class="step"><span class="num">A</span><div><b>Airway — Jalan napas</b><br>Pastikan jalan napas ditangani sesuai pelatihan dan kondisi korban.</div></div>
+ <div class="step"><span class="num">B</span><div><b>Breathing — Pernapasan</b><br>Nilai apakah korban bernapas normal. Jangan menunda meminta bantuan.</div></div>
+ <p class="small">Rujukan: PDF BFA, hlm. 7–20. Detail teknik RJP dalam slide lama dapat berbeda dari pedoman terkini; gunakan pelatihan/protokol terbaru.</p></div>
+ <div class="grid" style="margin-top:14px">
+  <div class="card"><h3>Jika korban tidak sadar</h3><ul><li>Segera minta bantuan medis.</li><li>Periksa respons dan pernapasan.</li><li>Jangan memberi makan atau minum kepada korban yang pingsan atau setengah sadar.</li><li>Hindari memindahkan korban kecuali ada bahaya langsung.</li><li>Pantau kondisi sampai bantuan datang.</li></ul><p class="small">Rujukan: PDF BFA, hlm. 16.</p></div>
+  <div class="card"><h3>Topik cedera dalam materi</h3><ul><li>Perdarahan dan mimisan</li><li>Syok</li><li>Sprain dan strain</li><li>Luka bakar</li><li>Tersedak</li><li>Patah tulang</li><li>Pingsan</li></ul><p>Untuk seluruh kondisi, utamakan keselamatan, minta bantuan medis sesuai tingkat kegawatan, dan lakukan tindakan hanya sesuai kompetensi/pelatihan.</p><p class="small">Rujukan: PDF BFA, hlm. 38–57.</p></div>
+ </div>
+ <div class="card" style="margin-top:14px"><h3>Alur keputusan cepat</h3><label for="victim">Apa kondisi yang terlihat?</label><select id="victim"><option value="danger">Lokasi masih berbahaya</option><option value="unresponsive">Korban tidak merespons</option><option value="bleed">Ada perdarahan</option><option value="burn">Ada luka bakar</option><option value="fracture">Diduga patah tulang/cedera berat</option><option value="conscious">Korban sadar dan bernapas normal</option></select><div id="aidResult" class="result" aria-live="polite">Jangan mendekat sebelum bahaya dikendalikan. Amankan area dan panggil bantuan yang berwenang.</div></div>
+</section>
+
+<section id="kuis" class="panel">
+ <div class="card"><span class="tag">Evaluasi mandiri</span><h2>Kuis pemahaman K3</h2><p>Pilih satu jawaban untuk setiap pertanyaan, lalu tekan <b>Periksa jawaban</b>. Hasil akan menunjukkan bagian yang perlu dipelajari kembali.</p><div class="progress"><span id="quizProgress"></span></div><div id="quizArea"></div><button class="btn primary" id="checkQuiz">Periksa jawaban</button> <button class="btn" id="resetQuiz">Ulangi kuis</button><div id="quizScore" aria-live="polite"></div></div>
+</section>
+</main>
+<footer>Materi pembelajaran berdasarkan PDF: Dasar-Dasar K3, Manajemen Risiko, Manajemen APD, dan Basic First Aid. Gunakan SOP dan ketentuan resmi yang berlaku di tempat kerja.</footer>
+<script>
+const tabs=[...document.querySelectorAll('nav button')];
+function go(id){document.querySelectorAll('.panel').forEach(p=>p.classList.toggle('active',p.id===id));tabs.forEach(b=>b.classList.toggle('active',b.dataset.tab===id));window.scrollTo({top:0,behavior:'smooth'})}
+tabs.forEach(b=>b.addEventListener('click',()=>go(b.dataset.tab)));
+document.getElementById('like').addEventListener('change',riskCalc);document.getElementById('sev').addEventListener('change',riskCalc);
+function riskCalc(){let a=+like.value,b=+sev.value,s=a*b;let cat=s<=4?'Rendah':s<=9?'Sedang':s<=16?'Tinggi':'Ekstrim';let note={Rendah:'Perlu aturan, prosedur, atau rambu sesuai matriks materi.',Sedang:'Perlu tindakan pengendalian langsung sesuai kondisi bahaya.',Tinggi:'Perlu perencanaan pengendalian dan prioritas penanganan.',Ekstrim:'Perlu perhatian manajemen atas dan tindakan segera sesuai prosedur.'}[cat];riskResult.className='result '+(cat==='Ekstrim'||cat==='Tinggi'?'high':cat==='Sedang'?'medium':'');riskResult.innerHTML='<b>Skor: '+s+' · '+cat+'</b><br>'+note}
+const apdMap={
+mata:['Pelindung mata dan wajah','Kacamata pengaman, goggles, face shield, atau helm las sesuai jenis paparan. Face shield tidak dianggap pengganti kacamata/goggles.'],
+napas:['Pelindung pernapasan','Respirator yang sesuai dengan jenis kontaminan dan hasil penilaian bahaya. Jenis respirator harus dipilih, diuji kesesuaiannya, dan digunakan sesuai program/prosedur tempat kerja.'],
+kepala:['Pelindung kepala','Helm keselamatan yang sesuai dengan risiko benturan atau benda jatuh; periksa kondisi dan kelayakannya.'],
+tangan:['Pelindung tangan dan kulit','Sarung tangan yang kompatibel dengan bahan dan pekerjaan. Jenis bahan sarung tangan harus disesuaikan dengan bahaya yang dihadapi.'],
+kaki:['Pelindung kaki','Sepatu keselamatan yang sesuai dengan risiko benda jatuh, tusukan, atau kondisi lantai.'],
+bising:['Pelindung pendengaran','Ear plug atau ear muff dengan tingkat perlindungan yang sesuai dengan paparan kebisingan.'],
+jatuh:['Perlindungan jatuh dari ketinggian','Sistem perlindungan jatuh yang sesuai, seperti full body harness dan sistem pengaman terkait, dengan pemeriksaan serta pelatihan.']
+};
+hazard.addEventListener('change',()=>{let v=apdMap[hazard.value];apdResult.innerHTML='<b>'+v[0]+'</b><br>'+v[1]});
+const aidMap={
+danger:'Jangan mendekat sebelum bahaya dikendalikan. Amankan area dari jarak aman dan panggil petugas/tim tanggap darurat.',
+unresponsive:'Segera hubungi layanan darurat. Periksa respons dan pernapasan sesuai pelatihan, ikuti instruksi operator. Jangan memberi makan atau minum.',
+bleed:'Gunakan sarung tangan/barrier bila tersedia, minta bantuan medis, dan ikuti pelatihan pertolongan perdarahan. Perdarahan berat memerlukan bantuan darurat segera.',
+burn:'Jauhkan korban dari sumber panas jika aman, minta bantuan medis sesuai luas/lokasi/tingkat luka. Jangan mengoleskan bahan sembarangan atau memecahkan lepuh.',
+fracture:'Jangan meluruskan atau memindahkan bagian yang cedera. Batasi gerakan, pantau kondisi korban, dan minta bantuan medis.',
+conscious:'Tanyakan keluhan, tetap dampingi, amati perubahan kondisi, dan cari bantuan medis bila gejala memburuk atau ada keraguan.'
+};
+victim.addEventListener('change',()=>{aidResult.textContent=aidMap[victim.value]});
+const questions=[
+['Apa tujuan utama K3?',['Hanya memenuhi administrasi','Melindungi pekerja dan orang lain serta menjaga sumber produksi aman','Mempercepat pekerjaan dengan mengabaikan prosedur'],1,'Dasar K3: tujuan K3.'],
+['Insiden yang tidak menimbulkan cedera tetapi berpotensi menimbulkan kerugian disebut…',['Hampir celaka','Kecelakaan fatal','Penyakit akibat kerja'],0,'Dasar K3: insiden dan hampir celaka.'],
+['Risiko dalam materi dinilai dengan mempertimbangkan…',['Warna seragam dan masa kerja','Kemungkinan dan keparahan','Jumlah alat tulis'],1,'Manajemen Risiko: kemungkinan × keparahan.'],
+['Urutan hirarki pengendalian yang paling tepat dimulai dari…',['APD','Rambu peringatan','Eliminasi bahaya'],2,'Manajemen Risiko: eliminasi berada di tingkat paling efektif.'],
+['APD sebaiknya dipahami sebagai…',['Pengganti seluruh pengendalian lain','Lapisan perlindungan terakhir','Jaminan bahwa bahaya hilang'],1,'Manajemen APD: APD bukan pengganti kontrol lain.'],
+['Sebelum menolong korban, penolong perlu menerapkan…',['3S: Safety Self, Scene, Patient','Langsung memindahkan korban','Memberi minum kepada semua korban'],0,'BFA: prinsip 3S.'],
+['Apa yang dilakukan jika lokasi kejadian masih berbahaya?',['Segera masuk dan menolong','Menunggu tanpa memberi tahu siapa pun','Jangan mendekat; amankan area dan panggil bantuan'],2,'BFA: keselamatan penolong dan lokasi.'],
+['Mengapa APD harus sesuai dengan bahaya?',['Agar terlihat seragam','Karena APD yang tidak sesuai tidak memberi perlindungan yang diperlukan','Supaya semua pekerjaan memakai jenis APD sama'],1,'Manajemen APD: pemilihan sesuai potensi bahaya.']
+];
+function renderQuiz(){quizArea.innerHTML=questions.map((q,i)=>'<div class="quiz-q"><p>'+(i+1)+'. '+q[0]+'</p>'+q[1].map((o,j)=>'<label class="option"><input type="radio" name="q'+i+'" value="'+j+'">'+o+'</label>').join('')+'<div class="feedback" id="fb'+i+'"></div></div>').join('');quizScore.innerHTML='';quizProgress.style.width='0%'}
+checkQuiz.addEventListener('click',()=>{let score=0,answered=0;questions.forEach((q,i)=>{let el=document.querySelector('input[name="q'+i+'"]:checked'),fb=document.getElementById('fb'+i);if(el){answered++;if(+el.value===q[2]){score++;fb.textContent='Benar. '+q[3];fb.style.color='#16865b'}else{fb.textContent='Belum tepat. '+q[3];fb.style.color='#bd4b42'}}else{fb.textContent='Belum dijawab. '+q[3];fb.style.color='#9a6b1b'}});quizProgress.style.width=(answered/questions.length*100)+'%';quizScore.innerHTML='<div class="result"><b>Skor: '+score+' dari '+questions.length+'</b><br>'+ (score===questions.length?'Hebat! Semua jawaban benar.':'Pelajari kembali penjelasan pada bagian yang belum tepat, lalu coba lagi.')+'</div>'});
+resetQuiz.addEventListener('click',renderQuiz);renderQuiz();riskCalc();
+</script>
+</body></html>
